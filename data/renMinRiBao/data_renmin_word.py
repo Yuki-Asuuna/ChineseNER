@@ -69,7 +69,8 @@ def data2pkl():
     linelabel=list()
     tags = set()
     tags.add('')
-    input_data = codecs.open('renmin4.txt','r','utf-8')
+    # input_data = codecs.open('renmin4.txt','r','utf-8')
+    input_data = codecs.open('train-flat-bme.txt', 'r', 'utf-8')
     for line in input_data.readlines():
         line = line.split()
         linedata=[]
@@ -133,7 +134,7 @@ def data2pkl():
 
     import pickle
     import os
-    with open('../renmindata.pkl', 'wb') as outp:
+    with open('../cnerta.pkl', 'wb') as outp:
 	    pickle.dump(word2id, outp)
 	    pickle.dump(id2word, outp)
 	    pickle.dump(tag2id, outp)
@@ -148,7 +149,7 @@ def data2pkl():
     
 
 
-originHandle()
-originHandle2()
-sentence2split()
+#originHandle()
+#originHandle2()
+#sentence2split()
 data2pkl()
